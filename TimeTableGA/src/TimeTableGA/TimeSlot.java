@@ -1,4 +1,4 @@
-package geneticalgorithm;
+package TimeTableGA;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,20 +12,20 @@ package geneticalgorithm;
  */
 public class TimeSlot {
     private final int timeSlotID;
-    private final int timeSlot;
+    private final String time;
     
-    public TimeSlot(int timeSlotID,int timeSlot)
+    public TimeSlot(int timeSlotID,String timeSlot)
     {
     this.timeSlotID =timeSlotID;
-    this.timeSlot = timeSlot;
+    this.time = timeSlot;
     }
 
     public int getTimeSlotID() {
         return timeSlotID;
     }
 
-    public int getTimeSlot() {
-        return timeSlot;
+    public String getTimeSlot() {
+        return time;
     }
     
     

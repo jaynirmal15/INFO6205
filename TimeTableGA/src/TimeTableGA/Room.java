@@ -1,4 +1,4 @@
-package geneticalgorithm;
+package TimeTableGA;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,18 +12,18 @@ package geneticalgorithm;
  */
 public class Room {
 
-    private final int roomID;
+    private final int id;
     private final String roomNumber;
-    private final int capacity;
+    private final int roomCapacity;
 
     public Room(int roomID, String roomNumber, int capacity) {
-        this.roomID = roomID;
+        this.id = roomID;
         this.roomNumber = roomNumber;
-        this.capacity = capacity;
+        this.roomCapacity = capacity;
     }
 
     public int getRoomID() {
-        return roomID;
+        return id;
     }
 
     public String getRoomNumber() {
@@ -31,6 +31,6 @@ public class Room {
     }
 
     public int getCapacity() {
-        return capacity;
+        return roomCapacity;
     }
 }

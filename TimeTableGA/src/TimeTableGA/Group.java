@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package geneticalgorithm;
+package TimeTableGA;
 
 /**
  *
@@ -12,12 +12,12 @@ package geneticalgorithm;
 public class Group {
     private final int groupID;
     private final int groupSize;
-    private final int ModuleIDs[];
+    private final int courseIDs[];
     
     
-    public Group(int groupID,int groupSize,int ModuleIDs[]){
+    public Group(int groupID,int groupSize,int courseIDs[]){
     this.groupID = groupID;
-    this.ModuleIDs = ModuleIDs;
+    this.courseIDs = courseIDs;
     this.groupSize = groupSize;
     }
 
@@ -29,8 +29,8 @@ public class Group {
         return groupSize;
     }
 
-    public int[] getModuleIDs() {
-        return ModuleIDs;
+    public int[] getCourseIDs() {
+        return courseIDs;
     }
     
     

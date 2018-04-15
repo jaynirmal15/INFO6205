@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package geneticalgorithm;
+package TimeTableGA;
 
 /**
  *
@@ -21,6 +21,23 @@ public class Modules {
     this.moduleName =moduleName;
     this.professorIDs = professorIDs;
     }
+    public int getRandomProfessorId(){
+        int professorId = professorIDs[(int) (professorIDs.length * Math.random())];
+        return professorId;
+    }
+
+    public int getModuleID() {
+        return moduleID;
+    }
+
+    public String getModuleCode() {
+        return moduleCode;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+    
     
     
     

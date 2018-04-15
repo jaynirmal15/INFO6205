@@ -1,4 +1,4 @@
-package geneticalgorithm;
+package TimeTableGA;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,10 +13,10 @@ package geneticalgorithm;
 public class Professor {
     
     private final int  professorID;
-    private final int professorName;
+    private final String professorName;
     
     
-    public Professor(int professorID,int professorName){
+    public Professor(int professorID,String professorName){
     this.professorID = professorID;
     this.professorName = professorName;
     }
@@ -25,7 +25,7 @@ public class Professor {
         return professorID;
     }
 
-    public int getProfessorName() {
+    public String getProfessorName() {
         return professorName;
     }
     
