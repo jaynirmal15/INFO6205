@@ -9,13 +9,13 @@ timetable scheduling problem presents a set of tasks (classes) and a set of reso
 Every task requests some resources for its realization and has the exact length.
 The set of timeslots when a class can be scheduled is also determined.
 The goal is to assign those tasks to their resources while satisfying all of the hard constraints - no resource should be allocated by multiple tasks at the same time
-The main goal of the genetic algorithm presented here is to achieve a feasible timetable. 
+The main goal of the genetic algorithm presented here is to achieve a feasible timetable.
 Implementation: -
 1. The program uses selection that is it selected the best individuals from the current population and eliminating bad individuals and making room for new children.
    The selecting parents(individuals) is based on their fitness value.
    It might be possible the some of the best individuals might be eliminated during the process which would decrease the efficieny of the algorithm and it will again have search a good individual for a number of generations.
    So to protect the best individuals I have kept an elitism count i.e never do crossover or mutation the top(elitism number) individuals from the population.
-   Selection code : =
+Selection code : =
    public Individual selectParent1(Population population) {
         Population tournament = new Population(this.tournamentSize);
         population.shuffle();
