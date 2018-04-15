@@ -16,7 +16,8 @@ Implementation: -
    It might be possible the some of the best individuals might be eliminated during the process which would decrease the efficieny of the algorithm and it will again have search a good individual for a number of generations.
    So to protect the best individuals I have kept an elitism count i.e never do crossover or mutation the top(elitism number) individuals from the population.
    Selection code : =
-   Population tournament = new Population(this.tournamentSize);
+   public Individual selectParent1(Population population) {
+        Population tournament = new Population(this.tournamentSize);
         population.shuffle();
         for (int i = 0; i < this.tournamentSize; i++) {
             Individual tournamentIndividual = population.getIndividual(i);
@@ -24,6 +25,7 @@ Implementation: -
         }
        
         return tournament.getFittest(1);
+    }
 2. Next is calulating the fitness function :=
    two functions contribute to the fitness function
    1. counting the number of clashes.
@@ -37,17 +39,27 @@ Implementation: -
 
 3. Crossover function : -
      Using selection function we select two parents for crossover.A random crossove point is selected and in the offspring we put parent1 genes till the crossover point and then the rest with parent two genes.
-     Individual parent1 = selectParent1(population);
-     Individual parent2 = selectParent2(population);
-     Individual offspring = new Individual(parent1.getChromosomeLength());
-     int crossOverPoint = r.nextInt(parent1.getChromosomeLength());
-         for (int j = 0; j < parent1.getChromosomeLength(); j++) {
-             if (j < crossOverPoint) {
-                 offspring.setGene(j, parent1.getGene(j));
-              } else {
-                  offspring.setGene(j, parent2.getGene(j));
-              }
-           }
+     for (int i = 0; i < population.populationSize(); i++) {
+
+            Individual parent1 = selectParent1(population);
+            Individual parent2 = selectParent2(population);
+            if (i >= elitismCount) {
+                //     initiliaze the offspring
+                Individual offspring = new Individual(parent1.getChromosomeLength());
+                int crossOverPoint = r.nextInt(parent1.getChromosomeLength());
+                for (int j = 0; j < parent1.getChromosomeLength(); j++) {
+                    if (j < crossOverPoint) {
+                        offspring.setGene(j, parent1.getGene(j));
+
+                    } else {
+                        offspring.setGene(j, parent2.getGene(j));
+                    }
+                }
+                newPopulation.setIndividual(i, offspring);
+            } else {
+                newPopulation.setIndividual(i, parent1);
+            }
+        }
 4. mutation : -
       A random individual is selected and if the index is less than the elitism count mutation is performed the is randomly put genes in the fittest soution for each iteration.
        for (int i = 0; i < population.populationSize(); i++) {
