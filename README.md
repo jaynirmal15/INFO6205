@@ -16,15 +16,14 @@ Implementation: -
    It might be possible the some of the best individuals might be eliminated during the process which would decrease the efficieny of the algorithm and it will again have search a good individual for a number of generations.
    So to protect the best individuals I have kept an elitism count i.e never do crossover or mutation the top(elitism number) individuals from the population.
    Selection code : =
-   public Individual selectParent1(Population population) {
-        Population tournament = new Population(this.tournamentSize);
+   Population tournament = new Population(this.tournamentSize);
         population.shuffle();
         for (int i = 0; i < this.tournamentSize; i++) {
             Individual tournamentIndividual = population.getIndividual(i);
             tournament.setIndividual(i, tournamentIndividual);
         }
+       
         return tournament.getFittest(1);
-     }
 2. Next is calulating the fitness function :=
    two functions contribute to the fitness function
    1. counting the number of clashes.
