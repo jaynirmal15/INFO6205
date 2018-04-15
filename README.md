@@ -24,7 +24,7 @@ Selection code : =
             tournament.setIndividual(i, tournamentIndividual);
         }
        
-        return tournament.getFittest(1);
+        return tournament.getFittest(0);
     }
 2. Next is calulating the fitness function :=
    two functions contribute to the fitness function
