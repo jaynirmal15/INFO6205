@@ -5,8 +5,6 @@ package geneticalgorithm.geneticalgorithm;
 
 
 
-import static org.junit.Assume.assumeNotNull;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -47,7 +45,7 @@ public class AppTest
 		//one of the chromosome of bestfitindividual
 	int[] chromosomeLength = new int[] {9,4,1,15,5,1,2,2,3,14,2,2,13,5,2,2,5,2,11,5,3,6,5,1,11,4,4,11,2,1,3,5,4,10,5,4,8,4,2,1,5,2,13,2,3,13,4,4,4,2,2,5,5,1,3,2,1,12,5,4};
 		Individual ind = new Individual(chromosomeLength);
-		Population pop = new Population(10);
+		
 		Schedule sch =  new Schedule();
 		sch.addRoom(1, "A1", 15);
 		sch.addRoom(2, "B1", 30);
