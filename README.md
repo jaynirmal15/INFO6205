@@ -1,5 +1,8 @@
-# INFO6205
+# INFO6205_323
 PROGRAM STRUCTURES ALGORITHM
+Team Members : 
+Jay Suresh Nirmal
+Karan  Kathayat
 
 Problem :-
 This project is one of the live problem which I faced during my course Registration.
